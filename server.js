@@ -5,7 +5,7 @@ const io = require('socket.io').listen(server);
 const logger = require('morgan');
 
 const hostname = '127.0.0.1';
-const port = 3000;
+const port = 8081;
 
 //app.use(logger('dev'));
 
