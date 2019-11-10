@@ -2,10 +2,11 @@ const express = require('express');
 const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io').listen(server);
+const bodyParser = require('body-parser');
 const logger = require('morgan');
 
 const hostname = '127.0.0.1';
-const port = 8081;
+const port = 3000;
 
 //app.use(logger('dev'));
 
@@ -17,6 +18,9 @@ server.listen(process.env.PORT || port);
 app.get('/', function (req, res) {
     res.sendFile (__dirname + '/index.html')
 });
+app.use(bodyParser.json(), bodyParser.urlencoded({
+    extended: true
+}));
 
 io.sockets.on('connection', function(socket) {
     connections.push(socket);//coloca as conexões no array
