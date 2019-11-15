@@ -13,6 +13,7 @@
     "morgan": "*",
     "nodemon": "*",
     "socket.io": "*",
-    "body-parser": "*"
+    "body-parser": "*",
+    "net": "*"
   }
 }
